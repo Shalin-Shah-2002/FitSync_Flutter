@@ -1,0 +1,33 @@
+buildscript {
+    
+ext.kotlin_version = '1.9.10' // Use a Kotlin version compatible with Java 21
+ // Update this to match the Kotlin version in your project
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // classpath 'com.android.tools.build:gradle:8.3.0'
+        classpath 'com.android.tools.build:gradle:8.1.1'
+        // Other classpath dependencies if needed
+    }
+}
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
