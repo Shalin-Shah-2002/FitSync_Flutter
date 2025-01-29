@@ -1,3 +1,24 @@
+# Flutter/Dart specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+.packages
+build/
+ios/Pods/
+pubspec.lock
+
+# Android specific
+android/.gradle/
+android/app/debug.keystore
+
+# VS Code/Android Studio
+.vscode/
+.idea/
+
+# Large Files
+*.log
+
 # Miscellaneous
 *.class
 *.log
