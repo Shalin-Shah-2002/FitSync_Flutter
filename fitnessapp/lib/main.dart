@@ -1,8 +1,8 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:fitnessapp/Services/Notification_Service/Notification_service.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:fitnessapp/Provider/BottomnavbarProvider.dart';
 import 'package:fitnessapp/Services/API/Calories_Food.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:fitnessapp/Services/API/Exersice_Api.dart';
 import 'package:fitnessapp/Services/API/firebase_api.dart';
 import 'package:fitnessapp/Views/LoginScreen.dart';

@@ -43,6 +43,8 @@ dependencies:
   firebase_messaging: ^15.2.1
   firebase_core: ^3.10.1
   flutter_datetime_picker: 
+  google_fonts: ^6.2.1
+  youtube_player_flutter: ^9.1.1
 
 dev_dependencies:
   flutter_test:

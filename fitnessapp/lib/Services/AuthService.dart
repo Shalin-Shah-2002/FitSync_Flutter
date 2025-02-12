@@ -2,7 +2,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  final String baseUrl = 'http://192.168.31.104:5001';
+  // final String baseUrl = 'http://192.168.31.104:5001';
+  final String baseUrl = 'https://nodejs-fitness-app-server-shalin.onrender.com';
+
 
   // Static variable to store userId
   static String? userId;

@@ -1,12 +1,14 @@
 import 'dart:async';
 
-
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:fitnessapp/Models/WorkoutModel.dart';
 
 class WorkoutService {
-  final String baseUrl = 'http://192.168.31.104:5001';
+  // final String baseUrl = 'http://192.168.31.104:5001';
+  final String baseUrl =
+      'https://nodejs-fitness-app-server-shalin.onrender.com';
+
   final StreamController<List<Workoutmodel>> _workoutStreamController =
       StreamController<List<Workoutmodel>>();
 
@@ -50,5 +52,17 @@ class WorkoutService {
 
   void dispose() {
     _workoutStreamController.close();
+  }
+
+  Future<void> deleteWorkout(String userId, String workoutId) async {
+    final url = Uri.parse('$baseUrl/users/$userId/workouts/$workoutId');
+
+    final res = await http.delete(url);
+
+    if (res.statusCode == 200) {
+      print(res.body);
+    } else {
+      throw Exception(res.body);
+    }
   }
 }

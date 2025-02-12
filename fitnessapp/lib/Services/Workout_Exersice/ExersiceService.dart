@@ -4,7 +4,9 @@ import 'dart:convert';
 import 'package:fitnessapp/Models/WorkoutModel.dart';
 
 class ExersiceService {
-  final String baseUrl = 'http://192.168.31.104:5001';
+  // final String baseUrl = 'http://192.168.31.104:5001';
+  final String baseUrl = 'https://nodejs-fitness-app-server-shalin.onrender.com';
+
 
   final StreamController<List<Exercises>> _exersiceStreamController =
       StreamController<List<Exercises>>();

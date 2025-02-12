@@ -1,10 +1,13 @@
 import 'package:fitnessapp/Services/Workout_Exersice/ExersiceService.dart';
+import 'package:fitnessapp/Views/Notification_Reminder.dart';
+import 'package:fitnessapp/Views/Youtube_Ai_Recommandation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:fitnessapp/Provider/AuthProvider.dart';
 import 'package:fitnessapp/Models/WorkoutModel.dart';
 import 'Components/Add_Exersice.dart';
 import 'package:fitnessapp/Views/Exersice_Screen.dart';
+import 'package:fitnessapp/Services/API/Youtube_Video_api.dart';
 
 class WorkoutDetails extends StatefulWidget {
   final String workoutId;
@@ -149,9 +152,10 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => ExerciseSearchList(
-                                          query: exercise.name ?? '',
-                                        )),
+                                  builder: (context) => YouTubeTabPage(
+                                    search_videos: exercise.name.toString(),
+                                  ),
+                                ),
                               );
                             },
                           );
@@ -165,30 +169,62 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          showModalBottomSheet(
-            context: context,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(20),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Stack(
+        children: [
+          Positioned(
+              left: 20,
+              bottom: 20,
+              child: FloatingActionButton.extended(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage_1(),
+                    ),
+                  );
+                },
+                backgroundColor: primaryColor,
+                label: const Text(
+                  ' Notify Me ',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
+                ),
+                icon: const Icon(
+                  Icons.notification_add,
+                  color: Colors.white,
+                ),
+              )),
+          Positioned(
+            right: 20,
+            bottom: 20,
+            child: FloatingActionButton.extended(
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(20),
+                    ),
+                  ),
+                  builder: (context) => ExerciseInputPage(
+                    workoutId: widget.workoutId,
+                    userId: userId,
+                  ),
+                );
+              },
+              backgroundColor: primaryColor,
+              label: const Text(
+                "Add Exercise",
+                style: TextStyle(color: Colors.white),
+              ),
+              icon: const Icon(
+                Icons.add,
+                color: Colors.white,
               ),
             ),
-            builder: (context) => ExerciseInputPage(
-              workoutId: widget.workoutId,
-              userId: userId,
-            ),
-          );
-        },
-        backgroundColor: primaryColor,
-        label: const Text(
-          "Add Exercise",
-          style: TextStyle(color: Colors.white),
-        ),
-        icon: const Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
+          ),
+        ],
       ),
     );
   }

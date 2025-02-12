@@ -7,6 +7,7 @@ import 'package:fitnessapp/Models/WorkoutModel.dart';
 import 'package:fitnessapp/Services/Workout_Exersice/WorkoutService.dart';
 import 'package:fitnessapp/Views/Profile_Screen.dart';
 import 'package:fitnessapp/Views/Notification_Reminder.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -101,7 +102,7 @@ class _HomeState extends State<Home> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>HomePage_1(),
+                              builder: (context) => HomePage_1(),
                             ),
                           );
                         },
@@ -189,81 +190,90 @@ class _HomeState extends State<Home> {
                           itemCount: items.length,
                           itemBuilder: (context, index) {
                             final item = items[index];
-                            return Container(
-                              margin: const EdgeInsets.only(bottom: 12),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.05),
-                                    blurRadius: 8,
-                                    offset: const Offset(0, 2),
-                                  ),
-                                ],
-                              ),
-                              child: Material(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(16),
-                                child: InkWell(
+                            return Dismissible(
+                              key: ValueKey(item),
+                              direction: DismissDirection.horizontal,
+                              onDismissed: (direction) {
+                                
+                                    workoutService.deleteWorkout(userId, item.sId.toString());
+                                
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.only(bottom: 12),
+                                decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
-                                  onTap: () {
-                                    dynamic workoutId = item.sId;
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => WorkoutDetails(
-                                          workoutId: workoutId,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.05),
+                                      blurRadius: 8,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
+                                child: Material(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(16),
+                                  child: InkWell(
+                                    borderRadius: BorderRadius.circular(16),
+                                    onTap: () {
+                                      dynamic workoutId = item.sId;
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => WorkoutDetails(
+                                            workoutId: workoutId,
+                                          ),
                                         ),
+                                      );
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            padding: const EdgeInsets.all(12),
+                                            decoration: BoxDecoration(
+                                              color: Colors.deepPurple.shade50,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                            ),
+                                            child: Icon(
+                                              Icons.fitness_center,
+                                              color: unselectedColor,
+                                              size: 24,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 16),
+                                          Expanded(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  item.title ?? 'No title',
+                                                  style: const TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 4),
+                                                Text(
+                                                  item.description ??
+                                                      'No description',
+                                                  style: TextStyle(
+                                                    color: Colors.grey.shade600,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Icon(
+                                            Icons.arrow_forward_ios,
+                                            color: Colors.grey.shade400,
+                                            size: 20,
+                                          ),
+                                        ],
                                       ),
-                                    );
-                                  },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(16.0),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          padding: const EdgeInsets.all(12),
-                                          decoration: BoxDecoration(
-                                            color: Colors.deepPurple.shade50,
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                          ),
-                                          child: Icon(
-                                            Icons.fitness_center,
-                                            color: unselectedColor,
-                                            size: 24,
-                                          ),
-                                        ),
-                                        const SizedBox(width: 16),
-                                        Expanded(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                item.title ?? 'No title',
-                                                style: const TextStyle(
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              const SizedBox(height: 4),
-                                              Text(
-                                                item.description ??
-                                                    'No description',
-                                                style: TextStyle(
-                                                  color: Colors.grey.shade600,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Icon(
-                                          Icons.arrow_forward_ios,
-                                          color: Colors.grey.shade400,
-                                          size: 20,
-                                        ),
-                                      ],
                                     ),
                                   ),
                                 ),
