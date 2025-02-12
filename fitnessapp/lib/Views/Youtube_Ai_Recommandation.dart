@@ -103,7 +103,7 @@ class _YouTubeTabPageState extends State<YouTubeTabPage>
           // Second Tab - Placeholder
           FutureBuilder<Map<String, dynamic>>(
             future:
-                AI_Exersice_Description.getExerciseDescriptionApi("pushups"),
+                AI_Exersice_Description.getExerciseDescriptionApi(widget.search_videos),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
