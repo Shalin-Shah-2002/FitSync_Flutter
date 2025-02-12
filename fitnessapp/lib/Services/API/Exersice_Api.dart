@@ -12,6 +12,7 @@ class ExersiceService with ChangeNotifier {
   bool get getIsLoading => isLoading;
   String get getErrorMessage => errorMessage;
 
+
   Future getExersicesApi(String query) async {
     final String baseUrl = "https://api.api-ninjas.com";
     final Map<String, String> headers = {

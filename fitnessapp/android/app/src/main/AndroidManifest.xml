@@ -8,10 +8,13 @@
 <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
-<!-- <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/> -->
+<uses-permission android:name="android.permission.INTERNET"/>
 
+<!-- <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/> -->
+<!-- <uses-library android:name="org.apache.http.legacy" required="false"/> -->
     <application
-        
+    android:usesCleartextTraffic="true"
+
         android:label="fitnessapp"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
