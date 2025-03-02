@@ -153,7 +153,7 @@ class _WorkoutDetailsState extends State<WorkoutDetails> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => YouTubeTabPage(
-                                    search_videos: exercise.name.toString(),
+                                    searchVideos: exercise.name.toString(),
                                   ),
                                 ),
                               );

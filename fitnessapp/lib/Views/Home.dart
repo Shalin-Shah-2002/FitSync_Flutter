@@ -102,7 +102,7 @@ class _HomeState extends State<Home> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePage_1(),
+                              builder: (context) => ProfileScreen(),
                             ),
                           );
                         },
