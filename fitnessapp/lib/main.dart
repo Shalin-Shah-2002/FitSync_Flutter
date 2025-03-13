@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'Provider/AuthProvider.dart';
 import 'Views/Homepage.dart';
 import 'dart:io';
-
+ 
 
 
 void main() async {
@@ -25,7 +25,7 @@ void main() async {
   await NotificationService().init();
   
   if (Platform.isAndroid) {
-    final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+    final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();  
     
     final AndroidFlutterLocalNotificationsPlugin? androidImplementation =
         flutterLocalNotificationsPlugin

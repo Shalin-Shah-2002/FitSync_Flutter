@@ -20,7 +20,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
 
   // Gender options
   final List<String> _genderOptions = ['Male', 'Female', 'Other'];
-  
+
   // Activity level options with descriptions
   final Map<String, String> _activityLevels = {
     'Sedentary': 'Little to no exercise',
@@ -29,15 +29,15 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
     'Active': '6-7 days per week',
     'Very Active': 'Professional athlete level'
   };
-  final _geminiUserRecommandation = GeminiUserRecommandation();
+  final _geminiUserRecommandation = GeminiUserRecommendation();
   @override
   void initState() {
     super.initState();
-    _geminiUserRecommandation.getRecommandationApi('25', 'Male', '70', '170', 'Moderate' );
+    _geminiUserRecommandation.getRecommendationApi(
+        '25', 'Male', '70', '170', 'Moderate');
     // TODO: implement initState
     super.initState();
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  
+
                   // Age Card
                   _buildInfoCard(
                     title: 'Age',
@@ -117,7 +117,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                       ],
                     ),
                   ),
-                  
+
                   // Weight Card
                   _buildInfoCard(
                     title: 'Weight',
@@ -150,13 +150,14 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
                             Text('40 kg', style: TextStyle(color: Colors.grey)),
-                            Text('150 kg', style: TextStyle(color: Colors.grey)),
+                            Text('150 kg',
+                                style: TextStyle(color: Colors.grey)),
                           ],
                         ),
                       ],
                     ),
                   ),
-                  
+
                   // Height Card
                   _buildInfoCard(
                     title: 'Height',
@@ -188,14 +189,16 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
-                            Text('140 cm', style: TextStyle(color: Colors.grey)),
-                            Text('220 cm', style: TextStyle(color: Colors.grey)),
+                            Text('140 cm',
+                                style: TextStyle(color: Colors.grey)),
+                            Text('220 cm',
+                                style: TextStyle(color: Colors.grey)),
                           ],
                         ),
                       ],
                     ),
                   ),
-                  
+
                   // Gender Card
                   _buildInfoCard(
                     title: 'Gender',
@@ -234,7 +237,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                       }).toList(),
                     ),
                   ),
-                  
+
                   // Activity Level Card
                   _buildInfoCard(
                     title: 'Activity Level',
@@ -296,7 +299,8 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                                     const SizedBox(width: 12),
                                     Expanded(
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             entry.key,
@@ -324,13 +328,18 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                       ],
                     ),
                   ),
-                  
+
                   const SizedBox(height: 24),
-                  
+
                   // Continue Button
                   ElevatedButton(
                     onPressed: () {
-                      
+                      _geminiUserRecommandation.getRecommendationApi(
+                          _age.toString(),
+                          _gender,
+                          _weight.toString(),
+                          _height.toString(),
+                          _activityLevel);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF462749),
