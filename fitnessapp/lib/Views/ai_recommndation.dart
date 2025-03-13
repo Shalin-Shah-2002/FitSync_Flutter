@@ -1,5 +1,6 @@
 // Ask the user for their 23 age, male gender (male/female/other),183 height (cm), 68 weight (kg), and activity level (Sedentary, Lightly Active, Moderately Active, Very Active). Calculate their BMI and classify it as Underweight, Normal, Overweight, or Obese. Use the Mifflin-St Jeor formula to determine their BMR (Basal Metabolic Rate). Based on their BMI and fitness goal, determine whether they should Lose Weight, Maintain, or Gain Muscle. Provide a workout plan accordingly: Cardio-focused workouts with strength training for weight loss, a balanced mix of cardio and weight training for maintenance, and heavy strength training with compound lifts for muscle gain. Include specific exercises they should follow in a comma-separated list.\n\nPresent the results in this format:\n\nBody Goal: [Lose Weight / Maintain / Gain Muscle]\nExercises You Should Follow: [List exercises separated by commas]\nBMR: [Calculated Value]\nBMI: [Value + Classification]
 
+import 'package:fitnessapp/Views/recommendation_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnessapp/Services/API/Gemini-user-recommandation.dart';
 
@@ -33,8 +34,8 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
   @override
   void initState() {
     super.initState();
-    _geminiUserRecommandation.getRecommendationApi(
-        '25', 'Male', '70', '170', 'Moderate');
+    // _geminiUserRecommandation.getRecommendationApi(
+    //     '25', 'Male', '70', '170', 'Moderate');
     // TODO: implement initState
     super.initState();
   }
@@ -334,12 +335,22 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   // Continue Button
                   ElevatedButton(
                     onPressed: () {
-                      _geminiUserRecommandation.getRecommendationApi(
-                          _age.toString(),
-                          _gender,
-                          _weight.toString(),
-                          _height.toString(),
-                          _activityLevel);
+                      // _geminiUserRecommandation.getRecommendationApi(
+                      //     _age.toString(),
+                      //     _gender,
+                      //     _weight.toString(),
+                      //     _height.toString(),
+                      //     _activityLevel);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RecommendationScreen(
+                                activityLevel: _activityLevel,
+                                age: _age,
+                                gender: _gender,
+                                height: _height,
+                                weight: _weight),
+                          ));
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF462749),
