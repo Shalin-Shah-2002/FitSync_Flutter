@@ -1,5 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+<!-- changed -->
+<uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+<uses-permission android:name="android.permission.BODY_SENSORS"/>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+
+
+
 <meta-data
     android:name="com.google.firebase.messaging.default_notification_icon"
     android:resource="@mipmap/ic_launcher" />
@@ -18,6 +27,11 @@
         android:label="fitnessapp"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+         <meta-data
+            android:name="com.google.android.gms.auth.api.signin"
+            android:value="true"/> 
+
+        <!-- changed right now  -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

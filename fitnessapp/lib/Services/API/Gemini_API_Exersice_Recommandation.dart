@@ -18,7 +18,7 @@ class GeminiExerciseRecommandation {
 
     try {
       final res = await http.post(
-        Uri.parse(baseurl + "/generate"),
+        Uri.parse("$baseurl/generate"),
         headers: {
           "Content-Type": "application/json",
         },

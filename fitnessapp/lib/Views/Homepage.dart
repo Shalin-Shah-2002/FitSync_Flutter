@@ -4,13 +4,10 @@ import 'package:fitnessapp/Services/Workout_Exersice/WorkoutService.dart';
 import 'package:fitnessapp/Views/Components/navitem.dart';
 import 'package:provider/provider.dart';
 import 'package:fitnessapp/Provider/BottomnavbarProvider.dart';
-import 'package:fitnessapp/Views/hello.dart';
 import 'package:fitnessapp/Views/Home.dart';
 import 'package:fitnessapp/Views/Components/ExersiceBottomSheetContent.dart';
 import 'package:fitnessapp/Views/Calories.dart';
 import 'package:fitnessapp/Views/Exersice_Screen.dart';
-import 'package:fitnessapp/Views/Reminder.dart';
-import 'package:fitnessapp/Views/Notification_Reminder.dart';
 
 
 class HomePage extends StatelessWidget {

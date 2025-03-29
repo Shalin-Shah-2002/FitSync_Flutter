@@ -22,7 +22,7 @@ class Workoutmodel {
     if (json['exercises'] != null) {
       exercises = <Exercises>[];
       json['exercises'].forEach((v) {
-        exercises!.add(new Exercises.fromJson(v));
+        exercises!.add(Exercises.fromJson(v));
       });
     }
     duration = json['duration'];
@@ -32,16 +32,16 @@ class Workoutmodel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['title'] = this.title;
-    data['description'] = this.description;
-    if (this.exercises != null) {
-      data['exercises'] = this.exercises!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['title'] = title;
+    data['description'] = description;
+    if (exercises != null) {
+      data['exercises'] = exercises!.map((v) => v.toJson()).toList();
     }
-    data['duration'] = this.duration;
-    data['difficulty'] = this.difficulty;
+    data['duration'] = duration;
+    data['difficulty'] = difficulty;
     // data['_id'] = this.sId;
-    data['createdAt'] = this.createdAt;
+    data['createdAt'] = createdAt;
     return data;
   }
 }
@@ -64,11 +64,11 @@ class Exercises {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['sets'] = this.sets;
-    data['reps'] = this.reps;
-    data['duration'] = this.duration;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['sets'] = sets;
+    data['reps'] = reps;
+    data['duration'] = duration;
     // data['_id'] = this.sId;
     return data;
   }

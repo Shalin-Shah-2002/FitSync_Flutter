@@ -1,12 +1,10 @@
 import 'package:fitnessapp/Views/WorkoutDetailsPage.dart';
-import 'package:fitnessapp/Views/hello.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:fitnessapp/Provider/AuthProvider.dart';
 import 'package:fitnessapp/Models/WorkoutModel.dart';
 import 'package:fitnessapp/Services/Workout_Exersice/WorkoutService.dart';
 import 'package:fitnessapp/Views/Profile_Screen.dart';
-import 'package:fitnessapp/Views/Notification_Reminder.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

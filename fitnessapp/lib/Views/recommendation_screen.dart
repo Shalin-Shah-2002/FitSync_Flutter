@@ -9,14 +9,14 @@ class RecommendationScreen extends StatefulWidget {
   final String gender;
   final String activityLevel;
 
-  RecommendationScreen({
-    Key? key,
+  const RecommendationScreen({
+    super.key,
     required this.activityLevel,
     required this.age,
     required this.gender,
     required this.height,
     required this.weight,
-  }) : super(key: key);
+  });
 
   @override
   State<RecommendationScreen> createState() => _RecommendationScreenState();
@@ -438,7 +438,7 @@ class _RecommendationScreenState extends State<RecommendationScreen> with Single
                           ],
                         ),
                       ),
-                    ).toList(),
+                    ),
                   ],
                 ),
               ),
@@ -504,12 +504,12 @@ class SaveButton extends StatelessWidget {
   final Color unselectedColor;
 
   const SaveButton({
-    Key? key,
+    super.key,
     required this.isSaved,
     required this.onPressed,
     required this.selectedColor,
     required this.unselectedColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

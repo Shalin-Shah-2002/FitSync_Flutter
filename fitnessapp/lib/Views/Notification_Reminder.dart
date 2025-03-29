@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:fitnessapp/Services/API/firebase_api.dart';
 
 class HomePage_1 extends StatefulWidget {
+  const HomePage_1({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -432,7 +434,7 @@ Future<void> fetchToken() async {
                   ],
                 ),
                 SizedBox(height: 30),
-                Container(
+                SizedBox(
                   height: 60,
                   child: ElevatedButton(
                     onPressed: _scheduleNotification,

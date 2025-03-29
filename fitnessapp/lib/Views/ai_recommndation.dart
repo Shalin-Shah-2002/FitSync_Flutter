@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fitnessapp/Services/API/Gemini-user-recommandation.dart';
 
 class UserInfoScreen extends StatefulWidget {
-  const UserInfoScreen({Key? key}) : super(key: key);
+  const UserInfoScreen({super.key});
 
   @override
   State<UserInfoScreen> createState() => _UserInfoScreenState();

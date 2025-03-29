@@ -24,13 +24,13 @@ class ExersiceModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['type'] = this.type;
-    data['muscle'] = this.muscle;
-    data['equipment'] = this.equipment;
-    data['difficulty'] = this.difficulty;
-    data['instructions'] = this.instructions;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['type'] = type;
+    data['muscle'] = muscle;
+    data['equipment'] = equipment;
+    data['difficulty'] = difficulty;
+    data['instructions'] = instructions;
     return data;
   }
 }

@@ -6,7 +6,7 @@ import 'package:fitnessapp/Services/API/firebase_api.dart';
 
 
 class ReminderPage extends StatefulWidget {
-  const ReminderPage({Key? key}) : super(key: key);
+  const ReminderPage({super.key});
 
   @override
   State<ReminderPage> createState() => _ReminderPageState();

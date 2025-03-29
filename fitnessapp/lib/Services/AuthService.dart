@@ -37,7 +37,7 @@ class AuthService {
 
     if (res.statusCode == 200) {
       print(res.body);
-      // Assign the userId to the static variable
+      
       userId = data['userid'];
       print(userId);
       return res.body;

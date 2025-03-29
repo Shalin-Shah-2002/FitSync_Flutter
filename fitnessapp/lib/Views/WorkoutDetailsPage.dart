@@ -12,7 +12,7 @@ import 'package:fitnessapp/Services/API/Youtube_Video_api.dart';
 class WorkoutDetails extends StatefulWidget {
   final String workoutId;
 
-  const WorkoutDetails({Key? key, required this.workoutId}) : super(key: key);
+  const WorkoutDetails({super.key, required this.workoutId});
 
   @override
   State<WorkoutDetails> createState() => _WorkoutDetailsState();
@@ -239,14 +239,14 @@ class ExerciseCard extends StatelessWidget {
   final VoidCallback onTap;
 
   const ExerciseCard({
-    Key? key,
+    super.key,
     this.name,
     this.sets,
     this.reps,
     this.duration,
     required this.color,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

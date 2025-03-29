@@ -10,11 +10,11 @@ class ExerciseSearchList extends StatefulWidget {
   final String query;
 
   const ExerciseSearchList({
-    Key? key,
+    super.key,
     this.selectedColor = const Color(0xFF462749),
     this.unselectedColor = const Color(0xFF8332AC),
     this.query = '',
-  }) : super(key: key);
+  });
 
   @override
   State<ExerciseSearchList> createState() => _ExerciseSearchListState();
@@ -661,7 +661,9 @@ class _ExerciseSearchListState extends State<ExerciseSearchList>
     if (muscle.contains('biceps') || muscle.contains('arm')) return '💪';
     if (muscle.contains('leg') ||
         muscle.contains('quad') ||
-        muscle.contains('hamstring')) return '🦵';
+        muscle.contains('hamstring')) {
+      return '🦵';
+    }
     if (muscle.contains('abs') || muscle.contains('core')) return '🏋️';
     if (muscle.contains('back') || muscle.contains('lat')) return '🤸';
     if (muscle.contains('shoulder')) return '🧘';
@@ -1067,7 +1069,7 @@ class _ExerciseSearchListState extends State<ExerciseSearchList>
                         ),
                       ),
                       const SizedBox(height: 12),
-                      Container(
+                      SizedBox(
                         height: 120,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,

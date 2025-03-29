@@ -1,12 +1,15 @@
 import 'package:fitnessapp/Views/Home.dart';
 import 'package:fitnessapp/Views/ai_recommndation.dart';
 import 'package:flutter/material.dart';
+import 'package:fitnessapp/Provider/AuthProvider.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final authprovider = Provider.of<Authprovider>(context);
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -200,8 +203,8 @@ class ProfileScreen extends StatelessWidget {
                 // AI Personalization
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) => UserInfoScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => UserInfoScreen()));
                   },
                   child: Container(
                     padding: const EdgeInsets.all(16),
@@ -245,7 +248,9 @@ class ProfileScreen extends StatelessWidget {
 
                 // Logout Button
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    authprovider.logout();
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF462749),
                     foregroundColor: Colors.white,

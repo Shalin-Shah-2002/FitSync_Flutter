@@ -17,12 +17,12 @@ class Youtube_Videos {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['title'] = this.title;
-    data['videoId'] = this.videoId;
-    data['url'] = this.url;
-    data['thumbnail'] = this.thumbnail;
-    data['channelTitle'] = this.channelTitle;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['title'] = title;
+    data['videoId'] = videoId;
+    data['url'] = url;
+    data['thumbnail'] = thumbnail;
+    data['channelTitle'] = channelTitle;
     return data;
   }
 }

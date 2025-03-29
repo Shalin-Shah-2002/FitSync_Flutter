@@ -7,7 +7,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class YouTubeTabPage extends StatefulWidget {
   final String searchVideos;
-  const YouTubeTabPage({required this.searchVideos, Key? key}) : super(key: key);
+  const YouTubeTabPage({required this.searchVideos, super.key});
 
   @override
   _YouTubeTabPageState createState() => _YouTubeTabPageState();
@@ -451,7 +451,7 @@ class ExerciseDetailsTab extends StatelessWidget {
   final Color unselectedColor;
 
   const ExerciseDetailsTab({
-    Key? key,
+    super.key,
     required this.exerciseName,
     required this.description,
     required this.beginnerReps,
@@ -459,7 +459,7 @@ class ExerciseDetailsTab extends StatelessWidget {
     required this.professionalReps,
     required this.selectedColor,
     required this.unselectedColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -712,7 +712,7 @@ class ExerciseDetailsTab extends StatelessWidget {
                   ),
                 ],
               ),
-            )).toList(),
+            )),
           ],
         ),
       ),
