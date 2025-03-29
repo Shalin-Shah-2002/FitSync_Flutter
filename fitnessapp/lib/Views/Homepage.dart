@@ -1,3 +1,4 @@
+import 'package:fitnessapp/Views/watch.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnessapp/Provider/AuthProvider.dart';
 import 'package:fitnessapp/Services/Workout_Exersice/WorkoutService.dart';
@@ -62,7 +63,7 @@ class HomePage extends StatelessWidget {
             NavItem(icon: Icons.home, label: "Home", index: 0),
             NavItem(icon: Icons.fastfood_outlined, label: "Calories", index: 1),
             NavItem(icon: Icons.sports_gymnastics, label: "Exerises", index: 2),
-            NavItem(icon: Icons.search, label: "Search", index: 3),
+            NavItem(icon: Icons.watch, label: "Watch", index: 3),
           ],
         ),
       ),
@@ -73,7 +74,7 @@ class HomePage extends StatelessWidget {
               : pagechange.selectedindex == 2
                   ? ExerciseSearchList() // Exercise search page when index is 2
                   : pagechange.selectedindex == 3
-                      ? const Center(child: Text("Search or Profile Page")) // Placeholder for index 3
+                      ? FitnessPage() // Placeholder for index 3
                       : const Center(child: Text("Calories")),
     );
   }
