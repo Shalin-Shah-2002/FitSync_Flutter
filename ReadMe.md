@@ -105,26 +105,3 @@ Contributions are welcome! Please open an issue or submit a pull request to disc
 
 No license specified yet. Please check with the repository owner for usage permissions.
 
----
-
-> *This README follows [GitHub Flavored Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)[^1][^2][^4]. For more details or updates, refer to the codebase or contact the repository owner.*
-
-<div style="text-align: center">⁂</div>
-
-[^1]: [https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-
-[^2]: [https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github)
-
-[^3]: [https://gist.github.com/allysonsilva/85fff14a22bbdf55485be947566cc09e](https://gist.github.com/allysonsilva/85fff14a22bbdf55485be947566cc09e)
-
-[^4]: [https://www.freecodecamp.org/news/github-flavored-markdown-syntax-examples/](https://www.freecodecamp.org/news/github-flavored-markdown-syntax-examples/)
-
-[^5]: [https://github.com/darsaveli/Readme-Markdown-Syntax](https://github.com/darsaveli/Readme-Markdown-Syntax)
-
-[^6]: [https://www.makeareadme.com](https://www.makeareadme.com)
-
-[^7]: [https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet](https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet)
-
-[^8]: [https://github.com/RichardLitt/standard-readme](https://github.com/RichardLitt/standard-readme)
-
-
