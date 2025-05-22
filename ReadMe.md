@@ -1,9 +1,3 @@
-Here is the **Markdown-rendered** version of your file (i.e., how it would appear on GitHub or any Markdown viewer):
-
----
-
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
-
 # FitSync Flutter
 
 FitSync\_Flutter is a cross-platform fitness and wellness application built with Flutter. It helps users track their health, set fitness goals, and engage with a supportive community. The project features a mobile app and a Node.js backend for robust data management and user authentication.
@@ -133,6 +127,4 @@ No license specified yet. Please check with the repository owner for usage permi
 
 [^8]: [https://github.com/RichardLitt/standard-readme](https://github.com/RichardLitt/standard-readme)
 
----
 
-If you want this file as a downloadable `.md` file, let me know—I can generate and share it for you.
